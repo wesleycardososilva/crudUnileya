@@ -16,6 +16,9 @@
 
                     <h1>Seja bem vindo!</h1>
                     <a href= "{{url('autores')}}">Lista de autores</a>
+                    <a href= "{{url('generos')}}">Lista de generos</a>
+                    <a href= "{{url('editoras')}}">Lista de editoras</a>
+                    <a href= "{{url('livros')}}">Lista de livros</a>
                 </div>
             </div>
         </div>

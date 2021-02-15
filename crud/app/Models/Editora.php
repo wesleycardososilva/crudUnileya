@@ -5,16 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Autor extends Model
+class Editora extends Model
 {
+
     protected $fillable  = [
-        'nome',
-        'ano_de_nascimento',
-        'sexo',
-        'nacionalidade'
+        'nome'
     ];
     public function livros()
     {
-        return $this->belongsToMany('App\Livro', 'livro_autor');
+        return $this->hasMany('App\Models\Livro');
     }
 }
