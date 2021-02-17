@@ -3,7 +3,7 @@ Projeto Backend, em PHP, utilizando framework Laravel(https://laravel.com/) e ba
 Para instalação do Laravel é necessário que instale o gerenciador de pacotes composer, https://getcomposer.org/ neste site é possível baixá-lo e obter todas as informções de uso.
 O ambiente de desenvolvimento PHP, Xampp, foi utilizado; auxiliando com um servidor apache e o phpMyAdmin.
 Para executar o backend, é preciso iniciar o Xampp, em seguida, no botão "start" iniciar o Apache e phpMyAdmin.
-Iniciado Apache e phpMyAdmin,dentro da pasta backend, digite no terminal o comando php artisan serve.
+Iniciado Apache e phpMyAdmin, digite no terminal o comando php artisan serve, dentro da pasta backend.
 O arquivo .env, na pasta raiz do backend, fornece as configurções relacionadas à conexão, senha, host etc.
 
 Projeto frontend utilizando React js e para estilização foi utilizado a biblioteca antd(https://ant.design/).
