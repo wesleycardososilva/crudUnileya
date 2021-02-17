@@ -9,28 +9,26 @@ class EditorasController extends Controller
     public function  index(){
         $editoras= Editora:: get();
 
-        return view('editoras.listaEditora', ['editoras'=> $editoras]);
-    }
-    public function  novo(){
-        return view('editoras.formEditora');
+        return \response()->json($editoras);
     }
     public function  add(Request $request){
         $editora = new Editora;
         $editora = $editora ->create( $request->all());
-        return \Redirect::back();
+        return (true);
     }
-    public function edit( $id){
-        $editora= editora::findOrFail($id);
-        return view('editoras.formEditora',['editora' => $editora] );
-    }
+
     public function update($id, Request $request){
         $editora= editora::findOrFail($id);
         $editora ->update( $request->all());
-        return \Redirect::back();
+        return(true);
     }
     public function delete($id){
         $editora= editora::findOrFail($id);
         $editora ->delete();
-        return \Redirect::back();
+        return(true);
+    }
+    public function get( $id){
+        $editora= editora::findOrFail($id);
+        return \response()->json($editora);
     }
 }

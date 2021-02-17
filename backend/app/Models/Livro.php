@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Livro extends Model
 {
+
     protected $fillable = ['autor', 'genero', 'editora', 'titulo', 'ano_de_lancamento'];
 
     public function genero()

@@ -9,8 +9,8 @@ class AutoresController extends Controller
 {
     public function  index(){
         $autores= Autor:: get();
+        return \response()->json($autores);
 
-        return view('autores.list', ['autores'=> $autores]);
     }
     public function  novo(){
         return view('autores.form');
@@ -18,7 +18,7 @@ class AutoresController extends Controller
     public function  add(Request $request){
         $autor = new Autor;
         $autor = $autor ->create( $request->all());
-        return Redirect::to('/autores');
+        return($autor);
     }
     public function edit( $id){
         $autor= autor::findOrFail($id);
@@ -27,11 +27,16 @@ class AutoresController extends Controller
     public function update($id, Request $request){
         $autor= autor::findOrFail($id);
         $autor ->update( $request->all());
-        return Redirect::to('/autores');
+        return(true);
     }
     public function delete($id){
         $autor= autor::findOrFail($id);
         $autor ->delete();
-        return Redirect::to('/autores');
+        return(true);
+
+    }
+    public function get( $id){
+        $autor= autor::findOrFail($id);
+        return \response()->json($autor);
     }
 }

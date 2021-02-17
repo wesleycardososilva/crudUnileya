@@ -7,7 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Editora extends Model
 {
+    public $timestamps = true;
+    public $primaryKey= "id";
 
+    protected $attributes = [
+        'nome'=>''
+    ];
     protected $fillable  = [
         'nome'
     ];

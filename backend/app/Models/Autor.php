@@ -7,6 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Autor extends Model
 {
+
+    protected $attributes = [
+        'nome'=>'',
+        'ano_de_nascimento'=>0,
+        'sexo'=>'',
+        'nacionalidade'=>''
+    ];
     protected $fillable  = [
         'nome',
         'ano_de_nascimento',
