@@ -25,7 +25,7 @@ export default function Livros() {
         dataIndex: "autor",
         key: "autor",
       },
-      
+
       {
         title: "Gênero",
         dataIndex: "genero",
@@ -60,7 +60,7 @@ export default function Livros() {
               e.preventDefault();
               LivrosService.delete(livro.id)
                 .then((response) => {
-                    LivrosService.getAll()
+                  LivrosService.getAll()
                     .then((response) => {
                       setDataTable(response.data);
                     })
@@ -90,7 +90,9 @@ export default function Livros() {
 
   return (
     <>
-    <Button><NavLink to={'/formLivro/0'}>Adicionar</NavLink></Button>
+      <Button>
+        <NavLink to={"/formLivro/0"}>Adicionar</NavLink>
+      </Button>
       <Table dataSource={dataTable} columns={columns} rowKey="id" />{" "}
     </>
   );

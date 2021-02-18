@@ -19,7 +19,7 @@ export default function Generos() {
         dataIndex: "nome",
         key: "nome",
       },
-      
+
       {
         title: "Editar",
         key: "editar",
@@ -39,7 +39,7 @@ export default function Generos() {
               e.preventDefault();
               GenerosService.delete(genero.id)
                 .then((response) => {
-                    GenerosService.getAll()
+                  GenerosService.getAll()
                     .then((response) => {
                       setDataTable(response.data);
                     })
@@ -69,7 +69,9 @@ export default function Generos() {
 
   return (
     <>
-    <Button><NavLink to={'/formGenero/0'}>Adicionar</NavLink></Button>
+      <Button>
+        <NavLink to={"/formGenero/0"}>Adicionar</NavLink>
+      </Button>
       <Table dataSource={dataTable} columns={columns} rowKey="id" />{" "}
     </>
   );

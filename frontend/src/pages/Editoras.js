@@ -19,7 +19,7 @@ export default function Editoras() {
         dataIndex: "nome",
         key: "nome",
       },
-      
+
       {
         title: "Editar",
         key: "editar",
@@ -39,7 +39,7 @@ export default function Editoras() {
               e.preventDefault();
               EditorasService.delete(editora.id)
                 .then((response) => {
-                    EditorasService.getAll()
+                  EditorasService.getAll()
                     .then((response) => {
                       setDataTable(response.data);
                     })
@@ -69,7 +69,9 @@ export default function Editoras() {
 
   return (
     <>
-    <Button><NavLink to={'/formEditora/0'}>Adicionar</NavLink></Button>
+      <Button>
+        <NavLink to={"/formEditora/0"}>Adicionar</NavLink>
+      </Button>
       <Table dataSource={dataTable} columns={columns} rowKey="id" />{" "}
     </>
   );

@@ -4,7 +4,6 @@ import EditorasService from "../services/editorasService";
 import { NavLink, useParams } from "react-router-dom";
 import "./style.css";
 
-
 export default function FormEditora() {
   const [nomeEditora, setNomeEditora] = useState(null);
   const { id } = useParams();
@@ -47,11 +46,11 @@ export default function FormEditora() {
 
   return (
     <>
-    <div className="wrapper">
-      <Button>
-        <NavLink to={"/editoras"}>voltar</NavLink>
-      </Button>
-      
+      <div className="wrapper">
+        <Button>
+          <NavLink to={"/editoras"}>voltar</NavLink>
+        </Button>
+
         <Form name="basic" onFinish={onFinish} onFinishFailed={onFinishFailed}>
           {id != 0 && (
             <p>

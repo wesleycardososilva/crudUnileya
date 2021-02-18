@@ -83,7 +83,9 @@ export default function Autores() {
 
   return (
     <>
-    <Button><NavLink to={'/formAutor/0'}>Adicionar</NavLink></Button>
+      <Button>
+        <NavLink to={"/formAutor/0"}>Adicionar</NavLink>
+      </Button>
       <Table dataSource={dataTable} columns={columns} rowKey="id" />{" "}
     </>
   );

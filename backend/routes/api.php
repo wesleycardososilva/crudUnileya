@@ -19,7 +19,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/autores', [App\Http\Controllers\AutoresController::class, 'index'])->name('autores');
 Route::get('/autores/{id}', [App\Http\Controllers\AutoresController::class, 'get'])->name('get');
 Route::post('/autores/add', [App\Http\Controllers\AutoresController::class, 'add'])->name('criar');
-Route::get('/autores/{id}/edit', [App\Http\Controllers\AutoresController::class, 'edit'])->name('edit');
 Route::post('/autores/update/{id}', [App\Http\Controllers\AutoresController::class, 'update'])->name('update');
 Route::delete('/autores/delete/{id}', [App\Http\Controllers\AutoresController::class, 'delete'])->name('delete');
 

@@ -10,7 +10,7 @@ export default function FormGenero() {
 
   useEffect(() => {
     if (id != 0) {
-        GenerosService.get(id)
+      GenerosService.get(id)
         .then((response) => {
           setNomeGenero(response.data.nome);
         })
@@ -21,8 +21,8 @@ export default function FormGenero() {
   }, []);
 
   const onFinish = (values) => {
-    if (id!=0) {
-        GenerosService.update(id, values.nome)
+    if (id != 0) {
+      GenerosService.update(id, values.nome)
         .then((response) => {
           window.location.href = "/generos";
         })
@@ -30,7 +30,7 @@ export default function FormGenero() {
           console.log(error);
         });
     } else {
-        GenerosService.add(values.nome)
+      GenerosService.add(values.nome)
         .then((response) => {
           window.location.href = "/generos";
         })
@@ -46,34 +46,34 @@ export default function FormGenero() {
 
   return (
     <>
-    <div className="wrapper">
-      <Button>
-        <NavLink to={"/generos"}>voltar</NavLink>
-      </Button>
+      <div className="wrapper">
+        <Button>
+          <NavLink to={"/generos"}>voltar</NavLink>
+        </Button>
 
-      <Form name="basic" onFinish={onFinish} onFinishFailed={onFinishFailed}>
-        {id != 0 && (
-          <p>
-            O nome atual do gênero é <em>"{nomeGenero}"</em>.
-          </p>
-        )}
-        <Form.Item
-          label="Nome do gênero"
-          name="nome"
-          rules={[
-            { required: true, message: "Nome da Genero" },
-            { max: 20, message: "nome com máximo de 20 caracteres" },
-          ]}
-        >
-          <Input placeholder="Nome da Genero" name="nome" />
-        </Form.Item>
+        <Form name="basic" onFinish={onFinish} onFinishFailed={onFinishFailed}>
+          {id != 0 && (
+            <p>
+              O nome atual do gênero é <em>"{nomeGenero}"</em>.
+            </p>
+          )}
+          <Form.Item
+            label="Nome do gênero"
+            name="nome"
+            rules={[
+              { required: true, message: "Nome da Genero" },
+              { max: 20, message: "nome com máximo de 20 caracteres" },
+            ]}
+          >
+            <Input placeholder="Nome da Genero" name="nome" />
+          </Form.Item>
 
-        <Form.Item>
-          <Button type="primary" htmlType="submit">
-            Enviar
-          </Button>
-        </Form.Item>
-      </Form>
+          <Form.Item>
+            <Button type="primary" htmlType="submit">
+              Enviar
+            </Button>
+          </Form.Item>
+        </Form>
       </div>
     </>
   );

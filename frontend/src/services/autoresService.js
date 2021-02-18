@@ -15,6 +15,6 @@ export default class AutoresService {
     return await api.get("/autores/"+id);
   }
   static async update(id, nome, ano_de_nascimento, sexo, nacionalidade) {
-    return await api.post("/autores/update",{'nome':nome,'ano_de_nascimento':ano_de_nascimento,'sexo':sexo,'nacionalidade':nacionalidade });
+    return await api.post("/autores/update/"+id,{'nome':nome,'ano_de_nascimento':ano_de_nascimento,'sexo':sexo,'nacionalidade':nacionalidade });
   }
 }
